@@ -7,8 +7,8 @@ from twilio.rest import Client
 from random import randint
 import time
 
-cpr = "dit_cprnr"
-password = "dit_password"
+cpr = "your_cpr_id"
+password = "your_password"
 checktxt = "2020 er tidligst klar i marts"
 message = "Aarsopgoerelse er klar!"
 notify = ['+4511111111', '+4522222222']
@@ -26,11 +26,11 @@ while True:
 
   if not checktxt in content:
     for sendsms in notify:
-      account_sid = 'dit_account_sid'
-      auth_token = 'dit_auth_token'
+      account_sid = 'your_twilio_account_sid'
+      auth_token = 'your_twilio_auth_token'
       client = Client(account_sid, auth_token)
       message = client.messages.create(
-        messaging_service_sid='din_messaging_sid',
+        messaging_service_sid='your_twilio_messaging_sid',
         body=message,
         to=sendsms
       )
