@@ -33,3 +33,5 @@ Setup your environment (or virtual environment)
 ```sh
 python3 -m pip install -r requirements.txt
 ```
+For SMS integration to work you will need to have an account at twilio.com with a attached phone number set up for SMS service.
+If not needed SMS integration can be removed from the script before running it.
