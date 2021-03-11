@@ -6,7 +6,8 @@ from random import randint
 import time
 from twilio.rest import Client
 
-text = '2020 er tidligst klar i marts'
+udbetal = 'Du skal have penge'
+betal = 'Du mangler at betale'
 cpr = 'your_cpr'
 password = 'your_password'
 notify = ['+4511111111', '+4522222222', '+4533333333']
@@ -22,7 +23,7 @@ while True:
   go('https://www.tastselv.skat.dk/borger/seaaropg2020/VisListe.do')
   content = show()
 
-  if text in content:
+  if not betal or not udbetal in content:
     counter = counter + 1
     print('Ikke klar endnu - Try number '+str(counter))
     sleep(randint(650, 850))
